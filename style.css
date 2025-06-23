@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content:  center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-width: 1164px;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+/*wrapper*/
+.wrapper{
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 50px;
+}
+
+/*theme dark*/
+/*background*/
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.4s ease;
+}
+body::before {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%); /* 暗色 */
+    opacity: 1;
+}
+body::after {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%); /* 亮色 */
+    opacity: 0;
+}
+
+/*header*/
+header{
+    padding: 12px 16px;
+    background-color: hsl(226, 25%, 17%);
+    margin: 40px 0 60px 0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+body:not(.light) #logo{
+    color: #fff;
+}
+#theme-toggle{
+    width: 50px;
+    height: 50px;
+    background: hsl(225, 23%, 24%) url("images/icon-sun.svg") no-repeat center;
+    background-size: 24px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.1s ease;
+}
+
+/*main nav*/
+main .nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+.nav h1{
+    color: hsl(200, 60%, 99%);
+    font-size: 32px;
+}
+.nav .btn{
+
+}
+.btn button{
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 1px solid hsl(226, 11%, 37%);
+    border-radius: 24px;
+    background-color: hsl(226, 25%, 17%);
+    color: hsl(200, 60%, 99%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+}
+
+/* main content*/
+main .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    min-width: 1164px;
+    min-height: 200px;
+    position: relative;
+}
+/*empty-alarm*/
+.empty-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: hsl(0, 0%, 78%);
+    font-size: 18px;
+    pointer-events: none;
+    display: none;
+}
+/*card*/
+.card-wrapper{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+    border: none;
+    border-radius: 16px;
+}
+.card{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 340px;
+    height: 158px;
+    border: 1px solid hsl(226, 11%, 37%);
+    border-radius: 16px;
+    background-color: hsl(226, 25%, 17%);
+    padding: 19px;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+/*description*/
+.description{
+    display: flex;
+    gap: 16px;
+}
+.description img{
+    width: 60px;
+    height: 60px;
+}
+.description h3{
+    color: hsl(200, 60%, 99%);
+}
+.description p{
+    font-size: 15px;
+    color: hsl(0, 0%, 78%);
+}
+/*.btn1*/
+.btn1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn1 .remove{
+    width: 90px;
+    height: 36px;
+    color: white;
+    border: 1px solid hsl(226, 11%, 37%);
+    border-radius: 18px;
+    background-color: hsl(226, 25%, 17%);
+    transition: box-shadow 0.3s ease, background-color 0.25s ease;
+}
+.btn1 .toggle{
+    width: 36px;
+    height: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: hsl(226, 11%, 37%);
+    transition: transform 0.3s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+}
+.toggle span{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translateX(2px);
+    transition: transform 0.2s ease;
+}
+
+/*hover*/
+header #theme-toggle:hover{
+    cursor: pointer;
+    background-color: hsl(226, 11%, 37%);
+    transform: scale(1.06);
+}
+.btn button:hover{
+    cursor: pointer;
+    background-color: hsl(226, 11%, 37%);
+    transform: scale(1.05);
+}
+.btn1 button:hover{
+    cursor: pointer;
+}
+.btn1 .remove:hover{
+    background-color: hsl(3, 77%, 44%);
+    border: none;
+    color: hsl(227, 75%, 14%);
+}
+.card-wrapper:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.toggle.active:hover{
+    cursor: pointer;
+}
+
+/*active*/
+.toggle.active{
+    background-color: hsl(3, 86%, 64%);
+}
+.toggle.active span{
+    transform: translateX(18px);
+}
+.btn button.active{
+    background-color: hsl(3, 86%, 64%);
+    color: hsl(227, 75%, 14%);
+    border: 1px solid hsl(3, 86%, 64%);
+}
+
+/*focus*/
+button {
+    position: relative;
+    z-index: 1;
+}
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(227, 75%, 14%), 0 0 0 4px hsl(3, 86%, 64%);
+}
+
+/*theme light*/
+/*background*/
+body.light::before {
+    opacity: 0;
+}
+body.light::after {
+    opacity: 1;
+}
+/*header*/
+body.light header{
+    background-color: hsl(200, 60%, 99%);
+}
+body.light #logo{
+    color: #000;
+}
+body.light #theme-toggle{
+    background: hsl(0, 0%, 93%) url("images/icon-moon.svg") no-repeat center;
+}
+/*card*/
+body.light .card{
+    background-color: hsl(200, 60%, 99%);
+    border: 1px solid hsl(0, 0%, 78%);
+}
+body.light .description h3{
+    color: hsl(227, 75%, 14%);
+}
+body.light .description p{
+    color: hsl(226, 11%, 37%);
+}
+body.light .remove{
+    background-color: hsl(200, 60%, 99%);
+    color: hsl(227, 75%, 14%);
+    border: 1px solid hsl(0, 0%, 78%);
+}
+body.light .toggle{
+    background-color: hsl(240, 2%, 78%);
+}
+body.light .btn button{
+    background-color: hsl(200, 60%, 99%);
+    color: hsl(225, 75%, 14%);
+    border: 1px solid hsl(0, 0%, 78%);
+}
+
+/*active*/
+body.light .toggle.active{
+    background-color: hsl(3, 77%, 44%);
+}
+body.light .nav h1{
+    color: hsl(225, 75%, 14%);
+}
+body.light .btn button.active{
+    background-color: hsl(3, 77%, 44%);
+    color: #fff;
+    border: 1px solid hsl(3, 77%, 44%);
+}
+
+/*hover*/
+body.light #theme-toggle:hover{
+    background-color: hsl(0, 0%, 78%);
+}
+body.light .btn button:hover{
+    background-color: hsl(0, 0%, 93%);
+}
+body.light .remove:hover{
+    color: hsl(200, 60%, 99%);
+}
+
+/*focus*/
+body.light button:focus-visible {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px hsl(3, 77%, 44%);
+}
