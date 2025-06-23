@@ -1,4 +1,4 @@
-![desktop-design-light](https://github.com/user-attachments/assets/6abd0ab2-62ac-4d1e-adf3-1a1a1232307b)# Browser Extensions Manager UI
+# Browser Extensions Manager UI
 
 A responsive, modular interface that simulates a browser extension management panel. This UI allows users to view installed extensions, toggle their active state, or remove them entirely. Designed to demonstrate layout structure, visual theming, and interactive elements using HTML and CSS.
 
