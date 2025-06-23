@@ -11,6 +11,7 @@ A responsive, modular interface that simulates a browser extension management pa
 ## 🛠️ Built With
 - HTML5
 - CSS3 (Flexbox, Variables, Transitions)
+- Javascript ES6
 - Theme switching (Light/Dark mode)
 - Button focus effects & visual consistency
 
