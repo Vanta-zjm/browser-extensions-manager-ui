@@ -6,12 +6,12 @@ A responsive, modular interface that simulates a browser extension management pa
 [👉 View Online](https://vanta-zjm.github.io/browser-extensions-manager-ui/)
 
 ## 📸 Preview  
-![Main Preview](./assets/desktop-design-dark.jpg)
+![Project Screenshot](./assets/desktop-design-dark.jpg)
 
 ### Additional Views
 
-![Light Theme](./assets/desktop-design-light.jpg)
-![Active](./assets/desktop-design-light-active.jpg)
+![Project Screenshot](./assets/desktop-design-light.jpg)
+![Project Screenshot](./assets/desktop-design-light-active.jpg)
 
 ## 🛠️ Built With
 - HTML5
